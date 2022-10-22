@@ -1,4 +1,4 @@
-# Synology Transmission + Openvpn setup in docker (MULLVAD VPN)
+# Synology (DSM 7.1.1-42962) Transmission + Openvpn setup in docker (MULLVAD VPN)
 
 1. (optional) create new user for this container via synology dsm gui e.g.: docker-user (users group)
 2. create new shared folder on synology e.g.: torrents (/volume1/torrents) and add read/write permission for docker-user
