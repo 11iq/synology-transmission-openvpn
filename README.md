@@ -25,7 +25,7 @@ keep the following lines, if you're using mullvad otherwise remove them
 ```
 docker-compose up
 ```
-7. check newly created network inside docker -> networks and add firewall rule for port 9091 (transmission webui) and specify docker subnet
+7. check newly created network inside docker -> networks and add firewall rule for docker subnet
 8. stop the docker-compose
 9. start as daemon
 ```
