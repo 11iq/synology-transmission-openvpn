@@ -14,7 +14,7 @@ LOCAL_NETWORK=XXXX/XX
 PGID=XXXX     (docker-user group id)
 PUID=XXXX     (docker-user user id)
 ```
-keep the following lines, if you're using mullvad otherwise remove them
+keep the following lines if you're using mullvad, otherwise remove them
 ```
         sysctls:
             - "net.ipv6.conf.all.disable_ipv6=0"
@@ -45,3 +45,5 @@ Newly downloaded torrent files in /volume1/torrents/watch will be automatically 
 Not finished torrents are stored in /volume1/torrents/incomplete
 
 If you want to download movies to different folder, upload the torrent manually and set destination path to e.g.: /data/completed/Movies
+
+Mullvad users must have peer listening port used in transmission (settings -> network -> port [check status of port]) fowarded in mullvad account (account management -> port forwarding -> choose city you used in OPENVPN_CONFIG + No device (only OpenVPN)) to be able to seed.
