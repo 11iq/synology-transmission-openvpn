@@ -25,7 +25,7 @@ keep the following lines, if you're using mullvad otherwise remove them
 ```
 docker-compose up
 ```
-7. check newly created network inside docker -> networks and add firewall rule for docker subnet
+7. check newly created network inside docker -> networks and add firewall rule for docker subnet. Also make sure, you add firewall rule for 9091 for your control host.
 8. stop the docker-compose
 9. start as daemon
 ```
