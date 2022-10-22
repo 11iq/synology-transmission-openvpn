@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    transmission-openvpn:
+    transmission:
         container_name: transmission
         cap_add:
             - NET_ADMIN
@@ -21,10 +21,8 @@ services:
             - TRANSMISSION_UMASK=002
             - TRANSMISSION_WATCH_DIR=/data/watch
             - TRANSMISSION_WATCH_DIR_ENABLED=true
-        logging:
-            driver: json-file
-            options:
-                max-size: 10m
+            - TRANSMISSION_WEB_UI=flood-for-transmission
+            - TZ=CET
         ports:
             - '9091:9091'
         image: haugene/transmission-openvpn:3.7.1
