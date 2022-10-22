@@ -28,6 +28,6 @@ services:
         ports:
             - '9091:9091'
         image: haugene/transmission-openvpn:3.7.1
-        restart: always
+        restart: unless-stopped
         sysctls:
             - "net.ipv6.conf.all.disable_ipv6=0"
