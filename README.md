@@ -43,3 +43,5 @@ http://<LOCAL_NETWORK>:9091
 Newly downloaded torrent files in /volume1/torrents/watch will be automatically added to transmission and started.
 
 Not finished torrents are stored in /volume1/torrents/incomplete
+
+If you want to download movies to different folder, upload the torrent manually and set destination path to e.g.: /data/completed/Movies
