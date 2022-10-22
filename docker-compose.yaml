@@ -1,0 +1,33 @@
+version: '3.3'
+services:
+    transmission-openvpn:
+        container_name: transmission
+        cap_add:
+            - NET_ADMIN
+        volumes:
+            - /volume1/torrents/:/data
+        environment:
+            - OPENVPN_PROVIDER=MULLVAD
+            - OPENVPN_CONFIG=cz_all
+            - OPENVPN_USERNAME=XXXXXXXXXXXX
+            - OPENVPN_PASSWORD=m
+            - LOCAL_NETWORK=192.168.1.0/24
+            - PGID=100
+            - PUID=1030
+            - TRANSMISSION_DOWNLOAD_DIR=/data/completed
+            - TRANSMISSION_HOME=/config
+            - TRANSMISSION_INCOMPLETE_DIR=/data/incomplete
+            - TRANSMISSION_RPC_PORT=9091
+            - TRANSMISSION_UMASK=002
+            - TRANSMISSION_WATCH_DIR=/data/watch
+            - TRANSMISSION_WATCH_DIR_ENABLED=true
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+        ports:
+            - '9091:9091'
+        image: haugene/transmission-openvpn:3.7.1
+        restart: always
+        sysctls:
+            - "net.ipv6.conf.all.disable_ipv6=0"
